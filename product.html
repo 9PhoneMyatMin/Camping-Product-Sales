@@ -16,13 +16,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container">
-            <a href="home.html" class="navbar-brand"><i class="fa-solid fa-campground"></i> Camping Lab</a>
+            <a href="index.html" class="navbar-brand"><i class="fa-solid fa-campground"></i> Camping Lab</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link me-2" href="home.html"><i class="fa-solid fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link me-2" href="index.html"><i class="fa-solid fa-home"></i> Home</a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-box"></i> Products</a> 
                         <div class="dropdown">
@@ -36,20 +36,25 @@
                             </ul>
                           </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link me-2" href="cart.html"><span id="cart-badge" class="badge"></span><i class="fa-solid fa-shopping-cart"></i> Cart</a></li>
                     <li class="nav-item"><a class="nav-link me-2" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link me-2" data-bs-toggle="modal" data-bs-target="#authModal">
+                            <i class="fa-solid fa-user "></i> Login</a>
+                      </li>
+                    
 
 
                       <!-- Vertical Line -->
-        <div class="vertical-line"></div>
-            <li class="nav-item">
-                <a href="#" class="nav-link ms-2" data-bs-toggle="modal" data-bs-target="#authModal">
-                <i class="fa-solid fa-user "></i> Login</a>
-            </li>
+  <div class="vertical-line"></div>
+
+
+  <li class="nav-item"><a class="nav-link ms-2" href="cart.html"><span id="cart-badge" class="badge"></span><i class="fa-solid fa-shopping-cart"></i> </a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
     <!-- Login & Sign Up Modal -->
     <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -108,7 +113,7 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>   
                                          <!--Tent Product -->
 
     <div class="container py-5" id="tent"><br>
@@ -122,7 +127,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-center">Sunny Beginner Hiking Tent - White / Sunny 3</h5>
                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $360</h5><br>
-                        <a href="#cart.html" class="btn btn-custom w-100" 
+                        <a href="#test1.html" class="btn btn-custom w-100" 
                         onclick="addToCart('Sunny Beginner Hiking Tent - White / Sunny 3', 360, 'img/tent1.jpg'); return false;">Add to Cart
                         </a>                     
                     </div>
