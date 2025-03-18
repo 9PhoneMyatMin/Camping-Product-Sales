@@ -10,20 +10,21 @@
     <link rel="stylesheet" href="bootstrap/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="bootstrap/js/bootstrap.bundle.js" defer></script>
-     <script src="bootstrap/js/cart.js" defer></script> 
+    <script src="bootstrap/js/cart.js" defer></script> 
+
 </head>
 <body>
 
      <!-- Navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container">
-            <a href="home.html" class="navbar-brand"><i class="fa-solid fa-campground"></i> Camping Lab</a>
+            <a href="index.html" class="navbar-brand"><i class="fa-solid fa-campground"></i> Camping Lab</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link me-2" href="home.html"><i class="fa-solid fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link me-2" href="index.html"><i class="fa-solid fa-home"></i> Home</a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-box"></i> Products</a> 
                         <div class="dropdown">
@@ -37,79 +38,84 @@
                             </ul>
                           </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link me-2" href="#"><span id="cart-badge" class="badge"></span><i class="fa-solid fa-shopping-cart"></i> Cart</a></li>
                     <li class="nav-item"><a class="nav-link me-2" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link me-2" data-bs-toggle="modal" data-bs-target="#authModal">
+                            <i class="fa-solid fa-user "></i> Login</a>
+                      </li>
+                    
 
 
                       <!-- Vertical Line -->
-        <div class="vertical-line"></div>
-            <li class="nav-item">
-                <a href="#" class="nav-link ms-2" data-bs-toggle="modal" data-bs-target="#authModal">
-                <i class="fa-solid fa-user "></i> Login</a>
-            </li>
+  <div class="vertical-line"></div>
+
+
+  <li class="nav-item"><a class="nav-link ms-2" href="#"><span id="cart-badge" class="badge"></span><i class="fa-solid fa-shopping-cart"></i> </a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
     <!-- Login & Sign Up Modal -->
-<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="authModalLabel">Welcome</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Welcome</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
                     
                     <!-- Tabs -->
-                <ul class="nav nav-tabs mb-3" id="authTabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign Up</a>
-                    </li>
-                </ul>
+                    <ul class="nav nav-tabs mb-3" id="authTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign Up</a>
+                        </li>
+                    </ul>
     
-                <div class="tab-content">
+                    <div class="tab-content">
                         <!-- Login Form -->
-                    <div class="tab-pane fade show active" id="login">
-                        <form>
-                            <div class="mb-3">
-                                <label for="loginEmail" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="loginEmail" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="loginPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="loginPassword" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Login</button>
-                        </form>
-                    </div>
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </form>
+                        </div>
     
                         <!-- Sign Up Form -->
-                    <div class="tab-pane fade" id="signup">
-                        <form>
-                            <div class="mb-3">
-                                <label for="signupName" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="signupName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="signupEmail" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="signupEmail" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="signupPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="signupPassword" required>
-                            </div>
-                            <button type="submit" class="btn btn-success w-100">Sign Up</button>
-                        </form>
+                        <div class="tab-pane fade" id="signup">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="signupName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="signupName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="signupEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="signupPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>    
+    </div>   
 
 <!-- cart -->
 
@@ -123,7 +129,6 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody id="cart-items"></tbody>
