@@ -49,18 +49,18 @@ function loadCart() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let cartItemsContainer = document.getElementById("cart-items");
     let cartTotal = document.getElementById("cart-total");
-
     cartItemsContainer.innerHTML = "";
     let total = 0;
-
     cart.forEach((item, index) => {
         let itemTotal = item.price * item.quantity;
         total += itemTotal;
-
         let row = document.createElement("tr");
         row.innerHTML = `
             <td><img src="${item.imgSrc}" class="rounded" width="50"></td>
-            <td>${item.name}</td>
+            <td>
+                ${item.name} 
+                <button class="btn btn-danger btn-sm ms-2" onclick="removeFromCart(${index})"><i class="fa-solid fa-trash"></i></button>
+            </td>
             <td class="text-primary fw-bold">$${item.price.toFixed(2)}</td>
             <td>
                 <div class="d-flex align-items-center justify-content-center">
@@ -70,14 +70,11 @@ function loadCart() {
                 </div>
             </td>
             <td class="text-success fw-bold">$${itemTotal.toFixed(2)}</td>
-            <td><button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">❌ Remove</button></td>
         `;
-
         cartItemsContainer.appendChild(row);
     });
-
     cartTotal.textContent = `$${total.toFixed(2)}`;
-    updateCartBadge(); // Ensure the badge updates
+    updateCartBadge();
 }
 
 //CartBadge
