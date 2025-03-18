@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap/css/product-style.css">
+    <link rel="stylesheet" href="bootstrap/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.js" defer></script>
+     <script src="bootstrap/js/cart.js" defer></script> 
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><i class="fa-solid fa-campground"></i> Camping Lab</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link me-2" href="index.html"><i class="fa-solid fa-home"></i> Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-box"></i> Products</a> 
+                        <div class="dropdown">
+                            <ul class="dropdown-menu bg-secondary-subtle w-100" aria-labelledby="categoryDropdown">
+                              <li><a class="dropdown-item " href="#">All</a></li>
+                              <li><a class="dropdown-item " href="product.html#tent">Tents</a></li>
+                              <li><a class="dropdown-item" href="product.html#clothing">Clothing</a></li>
+                              <li><a class="dropdown-item" href="product.html#sleep">Sleeping & Bags</a></li>
+                              <li><a class="dropdown-item" href="product.html#footwear">Footwear</a></li>
+                              <li><a class="dropdown-item" href="product.html#other">Other</a></li>
+                            </ul>
+                          </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link me-2" href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link me-2" data-bs-toggle="modal" data-bs-target="#authModal">
+                            <i class="fa-solid fa-user "></i> Login</a>
+                      </li>
+                    
+
+
+                      <!-- Vertical Line -->
+  <div class="vertical-line"></div>
+
+
+  <li class="nav-item"><a class="nav-link ms-2" href="cart.html"><span id="cart-badge" class="badge"></span><i class="fa-solid fa-shopping-cart"></i> </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Login & Sign Up Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Welcome</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs mb-3" id="authTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign Up</a>
+                        </li>
+                    </ul>
+    
+                    <div class="tab-content">
+                        <!-- Login Form -->
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </form>
+                        </div>
+    
+                        <!-- Sign Up Form -->
+                        <div class="tab-pane fade" id="signup">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="signupName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="signupName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="signupEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="signupPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+                                         <!--Tent Product -->
+
+    <div class="container py-5" id="tent"><br>
+        <h1 class="product-heading" id="products" >TENTS</h1><br>
+         <div class="row row-cols-1 row-cols-md-5 g-4">
+             
+             <!-- Product Card 1 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/tent1.jpg" class="card-img-top" alt="4 men tent">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sunny Beginner Hiking Tent - White / Sunny 3</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $360</h5><br>
+                        <a href="#test1.html" class="btn btn-custom w-100" 
+                        onclick="addToCart('Sunny Beginner Hiking Tent - White / Sunny 3', 360, 'img/tent1.jpg'); return false;">Add to Cart
+                        </a>                     
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 2 -->
+            <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/tent2.jpg" class="card-img-top" alt="tent">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Toogh Camping Tent 2-3 Person-Waterproof</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $100</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100" 
+                        onclick="addToCart('Toogh Camping Tent 2-3 Person-Waterproof', 100, 'img/tent2.jpg'); return false;">Add to Cart
+                        </a>  
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 3 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/tent3.jpg" class="card-img-top" alt="5 men tent">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Automatic Pop Up Tent for 3-4 People</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $79</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100" 
+                        onclick="addToCart('Automatic Pop Up Tent for 3-4 People', 79, 'img/tent3.jpg'); return false;">Add to Cart
+                        </a> 
+                     </div>
+                 </div>
+             </div>
+             <!-- Product Card 4 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/tent4.jpg" class="card-img-top" alt="tent">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Reative Outdoor 3 Second Tent</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $93</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100" 
+                         onclick="addToCart('Reative Outdoor 3 Second Tent', 93, 'img/tent4.jpg'); return false;">Add to Cart
+                         </a>
+                     </div>
+                 </div>
+             </div>
+              <!-- Product Card 5 -->
+              <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/tent5.jpg" class="card-img-top" alt="tent">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Slumberjack Overland 8 Person Tent</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $285</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100" 
+                         onclick="addToCart('Slumberjack Overland 8 Person Tent', 285, 'img/tent5.jpg'); return false;">Add to Cart
+                         </a>
+                    </div>
+                </div>
+            </div>           
+             <!-- Product Card 6 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/tent6.jpg" class="card-img-top" alt="
+                    tent">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">1/2/3/4 People Tent,Instant Easy Pop Up</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $140</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100" 
+                         onclick="addToCart('1/2/3/4 People Tent,Instant Easy Pop Up', 140, 'img/tent6.jpg'); return false;">Add to Cart
+                         </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 7 -->
+            <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/tent7.jpg" class="card-img-top" alt="tent">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">OneTigris Stella 4 Season Camping Tent</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $194</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100" 
+                         onclick="addToCart('OneTigris Stella 4 Season Camping Tent', 194, 'img/tent7.jpg'); return false;">Add to Cart
+                         </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 8 -->
+            <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/tent8.jpg" class="card-img-top" alt="tent">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">AYAMAYA Tent 4-6 Person / Camping Tent</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $164</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('AYAMAYA Tent 4-6 Person / Camping Tent', 164, 'img/tent8.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div><hr>
+
+                                            <!-- Clothing -->
+
+    <div class="container py-5" id="clothing">
+        <h1 class="product-heading">CLOTHING</h1><br>
+         <div class="row row-cols-1 row-cols-md-5 g-4">
+             
+             <!-- Product Card 1 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/clothing1.jpg" class="card-img-top" alt="clothing">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Unisex Waterproof SoftShell Tactical Jacket - green</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $68</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('Unisex Waterproof SoftShell Tactical Jacket - green', 68, 'img/clothing1.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 2 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/clothing2.jpg" class="card-img-top" alt="clothing">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Navy Blue Akita PEOPLE OF SHIBUYA Jacket</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $132</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Navy Blue Akita PEOPLE OF SHIBUYA Jacket', 132, 'img/clothing2.jpg'); return false;">Add to Cart
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             <!-- Product Card 3 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/clothing3.jpg" class="card-img-top" alt="clothing">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Carinthia G-Loft 2.0 ISG Jacket</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $73</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Carinthia G-Loft 2.0 ISG Jacket', 73, 'img/clothing3.jpg'); return false;">Add to Cart
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             <!-- Product Card 4 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/clothing4.jpg" class="card-img-top" alt="clothing">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Fjallraven Keb Jacket Men Wear</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $100</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('Fjallraven Keb Jacket Men Wear', 100, 'img/clothing4.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                 </div>
+             </div>
+              <!-- Product Card 5 -->
+              <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/clothing5.jpg" class="card-img-top" alt="clothing">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Men Tactical Zipper Outdoor Jacket</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $206</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('Men Tactical Zipper Outdoor Jacket', 206, 'img/clothing5.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 6 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/clothing6.jpg" class="card-img-top" alt="clothing">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Lightweight Waterproff Slim Fit Hiking Jacket</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $56</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('Lightweight Waterproff Slim Fit Hiking Jacket', 56, 'img/clothing6.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 7 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/clothing7.jpg" class="card-img-top" alt="clothing">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">The North Face:Black Antora Rain Jacket</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $286</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('The North Face:Black Antora Rain Jacket', 286, 'img/clothing7.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 8 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/clothing8.jpg" class="card-img-top" alt="clothing">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Men's Spring Bomber Jacket Men</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $78</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('Men Spring Bomber Jacket Men', 78, 'img/clothing8.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+                         <!-- Product Card 9 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/clothing9.jpg" class="card-img-top" alt="clothing">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Guide Gear Men's Cascade Hooded Jacket</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $90</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('Guide Gear Men Cascade Hooded Jacket', 90, 'img/clothing9.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+                        <!-- Product Card 10 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/clothing10.jpg" class="card-img-top" alt="clothing">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Outdoor Research Ferrosi Hooded Jacket</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $186</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('Outdoor Research Ferrosi Hooded Jacket', 186, 'img/clothing10.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+         </div>
+     </div><hr>
+
+                                             <!-- Sleeping & Bags -->
+
+    <div class="container py-5" id="sleep">
+        <h1 class="product-heading">SLEEPING & BAGS</h1><br>
+         <div class="row row-cols-1 row-cols-md-5 g-4">
+             
+             <!-- Product Card 1 -->
+             <div class="col-md-3 mb-3">
+                 <div class="card bg-light">
+                     <img src="img/bed1.jpg" class="card-img-top" alt="sleeping bag">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Ultra Light Backpacking Sleeping Bag</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $78</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Ultra Light Backpacking Sleeping Bag', 78, 'img/bed1.jpg'); return false;">Add to Cart
+                        </a>
+                     </div>
+                 </div>
+             </div>
+             <!-- Product Card 2 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/bed2.jpg" class="card-img-top" alt="sleeping bag">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Ultralight Waterproof Camping Sleeping Bag</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $56</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Ultralight Waterproof Camping Sleeping Bag', 56, 'img/bed2.jpg'); return false;">Add to Cart
+                        </a>
+                     </div>
+                 </div>
+             </div>
+             <!-- Product Card 3 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/bed3.jpg" class="card-img-top" alt="sleeping bag">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Coleman White Water Adult Sleeping Bag</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $98</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Coleman White Water Adult Sleeping Bag', 98, 'img/bed3.jpg'); return false;">Add to Cart
+                        </a>
+                     </div>
+                 </div>
+             </div>
+             <!-- Product Card 4 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/bed4.jpg" class="card-img-top" alt="sleeping bag">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Waterproof Camping Sleeping Bag</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $70</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Waterproof Camping Sleeping Bag', 70, 'img/bed4.jpg'); return false;">Add to Cart
+                        </a>
+                     </div>
+                 </div>
+             </div>
+              <!-- Product Card 5 -->
+              <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/bag1.jpg" class="card-img-top" alt="bag">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Hiking | MYSTERY RANCH Backpacks</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $186</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Hiking | MYSTERY RANCH Backpacks', 186, 'img/bag1.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 6 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/bag2.jpg" class="card-img-top" alt="bag">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">L.L. Bean Continental Rusksack Bag</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $145</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('L.L. Bean Continental Rusksack Bag', 145, 'img/bag2.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 7 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/bag3.jpg" class="card-img-top" alt="bag">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Coleman Walker 33L Outdoor Travel Backpack</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $85</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Coleman Walker 33L Outdoor Travel Backpack', 85, 'img/bag3.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 8 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/bag4.jpg" class="card-img-top" alt="bag">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Red Rock Outdoor Gear Transporter Day Backpack</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $73</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Red Rock Outdoor Gear Transporter Day Backpack', 73, 'img/bag4.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+         </div>
+     </div><hr>
+
+
+                                            <!-- Footwear -->
+
+    <div class="container py-5" id="footwear">
+        <h1 class="product-heading">FOOTWEAR</h1><br>
+         <div class="row row-cols-1 row-cols-md-5 g-4">
+             
+             <!-- Product Card 1 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/footwear1.jpg" class="card-img-top" alt="footwear">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Memory Foam Casual Lace Up Ankle Boots</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $61</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Memory Foam Casual Lace Up Ankle Boots', 61, 'img/footwear1.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 2 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/footwear2.jpg" class="card-img-top" alt="footwear">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Mountain Warehouse Adventurer Walking</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $65</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Mountain Warehouse Adventurer Walking', 65, 'img/footwear2.jpg'); return false;">Add to Cart
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             <!-- Product Card 3 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/footwear3.jpg" class="card-img-top" alt="footwear">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Merrel SnowMotion 8 Black Boots</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $60</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Merrel SnowMotion 8 Black Boots', 60, 'img/footwear3.jpg'); return false;">Add to Cart
+                         </a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div><hr>
+                                            <!-- Other -->
+     <div class="container py-5" id="other">
+        <h1 class="product-heading">OTHER</h1><br>
+         <div class="row row-cols-1 row-cols-md-5 g-4">
+             
+             <!-- Product Card 1 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/battery1.jpg" class="card-img-top" alt="battary">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">AAA 18650 350mAh 3.7V Lithium Ion</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $19</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('AAA 18650 350mAh 3.7V Lithium Ion', 19, 'img/battery1.jpg'); return false;">Add to Cart
+                         </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 2 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/Touch1.jpg" class="card-img-top" alt="touch">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">LED Torch High Power Long-range</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $110</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('LED Torch High Power Long-range', 110, 'img/Touch1.jpg'); return false;">Add to Cart
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             <!-- Product Card 3 -->
+             <div class="col-md-3 mb-3 ">
+                 <div class="card bg-light">
+                     <img src="img/table1.jpg" class="card-img-top" alt="table">
+                     <div class="card-body">
+                         <h5 class="card-title text-center">Outsunny Folding Camping Table | Aluminium</h5>
+                         <h5 class="card-text text-success mt-3"><strong>Price:</strong> $80</h5><br>
+                         <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Outsunny Folding Camping Table | Aluminium', 80, 'img/table1.jpg'); return false;">Add to Cart
+                         </a>
+                     </div>
+                 </div>
+             </div>
+              <!-- Product Card 4 -->
+              <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/table2.jpg" class="card-img-top" alt="table">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Portable Folding Aluminum Camping Table</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $88</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                         onclick="addToCart('Portable Folding Aluminum Camping Table', 88, 'img/table2.jpg'); return false;">Add to Cart
+                         </a>
+                    </div>
+                </div>
+            </div>
+             <!-- Product Card 5 -->
+             <div class="col-md-3 mb-3 ">
+                <div class="card bg-light">
+                    <img src="img/powerbank1.jpg" class="card-img-top" alt="powerbank">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Baseus 30000mAh Portable Powerbank</h5>
+                        <h5 class="card-text text-success mt-3"><strong>Price:</strong> $68</h5><br>
+                        <a href="#cart.html" class="btn btn-custom w-100"
+                        onclick="addToCart('Baseus 30000mAh Portable Powerbank', 68, 'img/powerbank1.jpg'); return false;">Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+         </div>
+     </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5><i class="fa-solid fa-info-circle"></i> About Us</h5>
+                    <p>We are dedicated to providing the best outdoor experiences. Join us for adventure!</p>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fa-solid fa-phone" id="contact"></i> Contact Us</h5>
+                    <p><i class="fa-solid fa-envelope"></i> Email: campinglab@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> Phone: +1 234 567 890</p>
+                    <p><i class="fa-solid fa-map-marker-alt"></i> Address: 123 Adventure St, Nature City, USA</p>
+                </div>
+                <div class="col-md-4">
+                    <h5><i class="fa-solid fa-share-nodes"></i> Follow Us</h5>
+                    <a href="#" class="text-white me-2"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    <a href="#" class="text-white me-2"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                    <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <hr>
+            <p class="foottext">&copy; 2025 MyWebsite. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
