@@ -1,5 +1,5 @@
-  /* Custom Modal Styling */
-  .custom-modal {
+/* Custom Modal Styling */
+.custom-modal {
     display: none;
     position: fixed;
     top: 0;
@@ -10,13 +10,15 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    padding: 10px;
 }
 
 .modal-content {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    width: 400px;
+    width: 90%; /* Adjusted for smaller screens */
+    max-width: 400px;
     text-align: center;
     animation: fadeIn 0.3s ease-in-out;
 }
@@ -25,6 +27,10 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+}
+footer 
+{
+    position: relative;
 }
 
 @keyframes fadeIn {
