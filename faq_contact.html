@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Camping Gear</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/faq_contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+
+       <!-- Navbar -->
+       <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><i class="fa-solid fa-campground"></i> Camping Lab</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link me-2" href="index.html"><i class="fa-solid fa-home"></i> Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-box"></i> Products</a> 
+                        <div class="dropdown">
+                            <ul class="dropdown-menu bg-secondary-subtle w-100" aria-labelledby="categoryDropdown">
+                              <li><a class="dropdown-item " href="product.html">All</a></li>
+                              <li><a class="dropdown-item " href="product.html#tent">Tents</a></li>
+                              <li><a class="dropdown-item" href="product.html#clothing">Clothing</a></li>
+                              <li><a class="dropdown-item" href="product.html#sleep">Sleeping & Bags</a></li>
+                              <li><a class="dropdown-item" href="product.html#footwear">Footwear</a></li>
+                              <li><a class="dropdown-item" href="product.html#other">Other</a></li>
+                            </ul>
+                          </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link me-2" href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link me-2" data-bs-toggle="modal" data-bs-target="#authModal">
+                            <i class="fa-solid fa-user "></i> Login</a>
+                      </li>
+                    
+
+
+     
+
+
+  <li class="nav-item"><a class="nav-link ms-3" href="cart.html"><span id="cart-badge" class="badge"></span><i class="fa-solid fa-shopping-cart"></i> </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Login & Sign Up Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Welcome</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs mb-3" id="authTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign Up</a>
+                        </li>
+                    </ul>
+    
+                    <div class="tab-content">
+                        <!-- Login Form -->
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </form>
+                        </div>
+    
+                        <!-- Sign Up Form -->
+                        <div class="tab-pane fade" id="signup">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="signupName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="signupName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="signupEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="signupPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+    
+   
+
+<!-- FAQ -->
+    <div class="container mt-5 mb-5" >
+        <h2 class="text-center mb-4 py-5" id="heading" id="faq">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What are the best tents for beginners?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        For beginners, we recommend lightweight and easy-to-assemble tents such as dome tents or pop-up tents.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Do you offer international shipping?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we ship to many countries worldwide. Please check our shipping policy for more details.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        How do I maintain my camping gear?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Clean your gear after each use, store it in a dry place, and follow the manufacturer’s care instructions to extend its lifespan.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        What payment methods do you accept?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We accept major credit cards, PayPal, and other secure payment methods. Check our payment options for more details.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Can I return or exchange my camping gear?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we offer a hassle-free return and exchange policy. Please refer to our return policy for more details.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        What are the essential camping gear items?
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Essential camping gear includes a tent, sleeping bag, backpack, cooking supplies, first aid kit, flashlight, and weather-appropriate clothing.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        How can I stay safe while camping?
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Stay safe by informing someone about your trip, carrying a first aid kit, being aware of wildlife, staying hydrated, and following campsite regulations.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEight">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Do you offer discounts for bulk orders?
+                    </button>
+                </h2>
+                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we offer discounts for bulk purchases. Contact our support team for pricing and special offers.
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </div><hr>
+
+
+<!-- Form -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="contact-card">
+                            <h2 class="text-center mb-4">Get in Touch</h2>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><i class="fa-solid fa-info-circle py-2"></i> More</h5>
+                <p><a href="#" class="text-white me-2"  id="linehide">Camping Lab FAQ</a></p>
+                <p><a href="faq_contact.html#contact" class="text-white me-2"  id="linehide">Contact</a></p>
+            </div>
+            <div class="col-md-4">
+                <h5><i class="fa-solid fa-phone"></i> Contact Us</h5>
+                <p><i class="fa-solid fa-envelope"></i> Email: campinglab@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> Phone: +1 234 567 890</p>
+                <p><i class="fa-solid fa-map-marker-alt"></i> Address: 123 Adventure St, Nature City, USA</p>
+            </div>
+            <div class="col-md-4">
+                <h5><i class="fa-solid fa-share-nodes"></i> Follow Us</h5>
+                <a href="#" class="text-white me-2"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#" class="text-white me-2"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <hr>
+        <p class="foottext">&copy; 2025 Camping Lab. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
