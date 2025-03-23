@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/cart.css">
+    <link rel="stylesheet" href="bootstrap/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="bootstrap/js/cart.js" defer></script> 
+
+</head>
+<body>
+
+     <!-- Navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><i class="fa-solid fa-campground"></i> Camping Lab</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link me-2" href="index.html"><i class="fa-solid fa-home"></i> Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-box"></i> Products</a> 
+                        <div class="dropdown">
+                            <ul class="dropdown-menu bg-secondary-subtle w-100" aria-labelledby="categoryDropdown">
+                              <li><a class="dropdown-item " href="product.html">All</a></li>
+                              <li><a class="dropdown-item " href="product.html#tent">Tents</a></li>
+                              <li><a class="dropdown-item" href="product.html#clothing">Clothing</a></li>
+                              <li><a class="dropdown-item" href="product.html#sleep">Sleeping & Bags</a></li>
+                              <li><a class="dropdown-item" href="product.html#footwear">Footwear</a></li>
+                              <li><a class="dropdown-item" href="product.html#other">Other</a></li>
+                            </ul>
+                          </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link me-2" href="faq_contact.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link me-2" data-bs-toggle="modal" data-bs-target="#authModal">
+                            <i class="fa-solid fa-user "></i> Login</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link ms-3" href="#"><span id="cart-badge" class="badge"></span><i class="fa-solid fa-shopping-cart"></i> </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Login & Sign Up Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Welcome</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs mb-3" id="authTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Sign Up</a>
+                        </li>
+                    </ul>
+    
+                    <div class="tab-content">
+                        <!-- Login Form -->
+                        <div class="tab-pane fade show active" id="login">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </form>
+                        </div>
+    
+                        <!-- Sign Up Form -->
+                        <div class="tab-pane fade" id="signup">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="signupName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="signupName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupEmail" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="signupEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signupPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="signupPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+<!-- cart -->
+
+<div class="container py-5" id="cart">
+    <h1 class="text-center text-primary mt-4">🛒 Your Shopping Cart</h1>
+    <div class="table-responsive">
+        <table class="table table-hover mt-4">
+            <thead class="table-secondary">
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+    </div>
+    <h3 class="text-end text-success py-5">Total: <span id="cart-total">$0</span></h3>
+    <div class="text-end">
+        <button class="btn btn-outline-danger" onclick="clearCart()">🗑 Clear Cart</button>
+        <button class="btn btn-primary ms-2" onclick="openOrderModal()">🛍 Order Now</button>
+    </div>
+</div>
+
+<!-- Custom Order Confirmation Modal -->
+<div id="orderModal" class="custom-modal">
+    <div class="modal-content">
+        <h4>Confirm Your Order</h4>
+        <p>Are you sure you want to place this order?</p>
+        <h4 class="text-success">Total: <span id="modal-cart-total">$0</span></h4>
+        <div class="modal-buttons">
+            <button class="btn btn-secondary" onclick="closeOrderModal()">Cancel</button>
+            <button class="btn btn-success" onclick="confirmOrder()">✅ Confirm Order</button>
+        </div>
+    </div>
+</div>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5><i class="fa-solid fa-info-circle py-2"></i> More</h5>
+                <p><a href="faq_contact.html#faq" class="text-white me-2"  id="linehide">Camping Lab FAQ</a></p>
+                <p><a href="faq_contact.html#contact" class="text-white me-2"  id="linehide">Contact</a></p>
+            </div>
+            <div class="col-md-4">
+                <h5><i class="fa-solid fa-phone"></i> Contact Us</h5>
+                <p><i class="fa-solid fa-envelope"></i> Email: campinglab@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> Phone: +1 234 567 890</p>
+                <p><i class="fa-solid fa-map-marker-alt"></i> Address: 123 Adventure St, Nature City, USA</p>
+            </div>
+            <div class="col-md-4">
+                <h5><i class="fa-solid fa-share-nodes"></i> Follow Us</h5>
+                <a href="#" class="text-white me-2"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="#" class="text-white me-2"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        <hr>
+        <p class="foottext">&copy; 2025 Camping Lab. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
