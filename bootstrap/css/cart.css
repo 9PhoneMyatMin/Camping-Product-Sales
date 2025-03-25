@@ -1,0 +1,43 @@
+
+.navbar
+{
+      /* background: rgba(0, 0, 0, 0.692); */
+      background: rgba(43, 42, 42, 0.943);
+}  
+
+.container .navbar-brand
+{
+    font-size: 1.7rem;
+    font-weight: bold;
+    color:  rgb(255, 26, 1);
+}
+.navbar-nav .nav-link 
+{
+    font-size: 1.2rem;
+    color:white;
+    transition: color 0.4s ease-in-out;
+     /* background-color 0.3s ease-in-out; */
+}
+
+.navbar-nav .nav-link:hover {
+    color:  rgb(255, 26, 1); /* Change text color on hover */
+   /* background-color: rgba(255, 255, 255, 0.2);  Light background effect */
+    /*border-radius: 5px;  Optional rounded corners */
+    /* padding: 10px; Adds some spacing for better hover effect */
+}
+  /* sign-up */
+  .modal-content {
+    border-radius: 10px;
+}
+.nav-tabs .nav-link {
+    color: black;
+}
+.nav-tabs .nav-link.activee {
+    color: white;
+    background-color: #2d66a3;
+}
+
+.foottext
+{
+    color:  rgb(255, 26, 1);
+}
